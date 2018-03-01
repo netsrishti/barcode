@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+    <!-- see http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+    <style>
+        /* following two viewport lines are equivalent to meta viewport statement above, and is needed for Windows */
+        /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; max-zoom: 100% ; width: 100vw ; }
+        @viewport     { user-zoom: fixed ; min-zoom: 100% ; max-zoom: 100% ; width: 100vw ; }
+    </style>
+
+    
+    
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+<img src="img/j2.jpg" style="position:absolute;left:0;top:0;z-index:-1000;"/>
+    <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
+    <!-- Place your remote debugging weinre script URL here, if it does not work below. -->
+
+    <!-- "Phantom" cordova.js required for projects that use plugins -->
+ 
+
+    <script src="js/app.js"></script>
+    <script src="js/init-app.js"></script>
+    <script src="xdk/init-dev.js"></script>
+    <script src="js/util.js"></script>
+	
+<div id="div222"></div>
+    <a href="#" onclick="onDeviceReady();"><img src="img/logo.png" alt="login"/></a>
+    <table><tr><td><a href="login.html"><button type="button">Login</button></a> <a href="index.html"><button type="button">Home</button></a> <a href="dashboard.html"><button type="button">Report</button></a></td></tr>
+    <tr><td><br/><br/>
+        <input type="text" id="id_pass" placeholder="Pin" size="3"/><br/>
+        <button type="button" id="id_btnScan" onclick="document.getElementById('id_textArea').style.display='block';scan();">Scan</button></td></tr>
+    </table>
+  
+
+    <div class="align-center" id="div1">
+        <textarea id="id_textArea" class="align-left" readonly="readonly" wrap="off" style="display:none;"></textarea>
+        <br/><br/><iframe src="" id="id_frm" style="display:none;width:100%;height:700;"></iframe>
+    </div>
+
+
+    <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
+    <!-- Place your remote debugging weinre script URL here, if it does not work above. -->
+</body>
+
+</html>

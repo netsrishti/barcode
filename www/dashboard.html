@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+    <style>
+        /* following two viewport lines are equivalent to meta viewport statement above, and is needed for Windows */
+        /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; max-zoom: 100% ; width: 100vw ; }
+        @viewport     { user-zoom: fixed ; min-zoom: 100% ; max-zoom: 100% ; width: 100vw ; }
+    </style>
+
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+    
+    
+    <script src="cordova.js"></script>
+ <script src="js/ajax.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/init-app.js"></script>
+    <script src="xdk/init-dev.js"></script>
+    <script src="js/util.js"></script>
+<script language="javascript">
+    function GetDboard()
+
+{
+
+var url="http://titan.netsrishti.net/m_dboard.asp";
+
+xmlHttp=GetXmlHttpObject(stateChanged);
+xmlHttp.open("GET", url , true);
+xmlHttp.send(null);
+} 
+
+function stateChanged() 
+{ 
+if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
+{
+document.getElementById("div1").innerHTML=xmlHttp.responseText;
+}
+else
+{
+document.getElementById("div1").innerHTML='<img src="loading5.gif" alt="Loading">';
+}
+}
+</script>
+<a href="#" onclick="GetDboard();">Location wise summary</a>
+    <div id="div1"></div>
+</body>
+
+</html>
